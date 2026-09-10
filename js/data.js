@@ -87,7 +87,7 @@ const moodData = {
 
         const quizDataAboutMe = [
             { q: "1. Siapa nama wanita cantik pacarmu ini? 😜", options: ["Mermaid", "Emeralda", "Batu", "Esmeralda"], correct: 1 },
-            { q: "2. Hal apa yang paling aku GA SUKA kalau kamu lakuin?", options: ["Lupa Makan", "Bohong", "Main Game", "Tidur Kemalaman"], correct: 1 },
+            { q: "2. Makanan apa yg aku paling suka?", options: ["Ular", "Bebek", "Komodo", "Semua benar"], correct: 1 },
             { q: "3. Kalimat apa yang sering keluar saat aku salting?", options: ["alah alah alah", "prett", "ohiya?", "makasih"], correct: 0 },
             { q: "4. Kalau aku tiba-tiba mendadak diem atau bales chat singkat, artinya...",options: ["Ngambek berat!", "Lapar / Mengantuk 😴", "Capek / Overthinking 🧠", "Antara lapar atau kangen kamu 😜"],correct: 3 },
             { q: "5. Hal paling efektif yang bisa bikin mood aku auto-bagus seharian itu apa?",  options: ["Dikasih kabar tanpa diminta 📲", "Dipuji & disayang-sayang 💖", "Diajak jajan makanan enak 🍦", "Semua jawaban benar (Pokoknya dari kamu!)"],correct: 3},

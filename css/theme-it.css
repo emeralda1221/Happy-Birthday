@@ -1,0 +1,134 @@
+/* ============================================
+   THEME-IT.CSS - Sentuhan visual tema "IT / Developer Terminal"
+   Di-load PALING TERAKHIR supaya bisa menambah/menimpa detail visual
+   tanpa mengubah struktur/layout dari style.css & features.css.
+   ============================================ */
+
+/* --- Global terminal feel: sedikit glow hijau di elemen aksen --- */
+h1, h2, h3, h4 {
+    letter-spacing: 0.3px;
+}
+
+/* --- TERMINAL WINDOW DOTS (header, di dalam .nav-left, sebelum ikon hamburger) --- */
+.terminal-dots {
+    display: flex;
+    gap: 4px;
+    margin-right: 2px;
+}
+.term-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red { background: #f87171; }
+.dot-yellow { background: #fbbf24; }
+.dot-green { background: #22c55e; }
+
+.terminal-path {
+    display: block;
+    font-size: 9px;
+    color: #22c55e;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    margin-bottom: 1px;
+}
+
+/* --- SECTION TERMINAL LABELS (mis. "GIT_LOG --ONELINE", "MOOD_TRACKER.LOG") --- */
+.term-label {
+    display: inline-block;
+    font-size: 10px;
+    color: #22c55e;
+    opacity: 0.65;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed rgba(34, 197, 94, 0.35);
+    padding-bottom: 4px;
+}
+
+/* --- BLINKING CURSOR di judul utama Home --- */
+#home h1::after {
+    content: "_";
+    color: #22c55e;
+    animation: blink-cursor 1s step-start infinite;
+}
+@keyframes blink-cursor {
+    50% { opacity: 0; }
+}
+
+/* --- CARD BORDERS: kesan "code editor panel" (border tipis, sudut lebih tegas) --- */
+.item, .wish-card, .game-card, .quiz-container, .pin-box,
+.reasons-container #downloadableReasonsCard, .gallery-item,
+.mood-card-response, .birthday-message-card, .cake-container {
+    border-color: rgba(34, 197, 94, 0.25) !important;
+}
+
+/* --- Highlight border kiri timeline & card jadi hijau terminal, sudah otomatis lewat recolor,
+     tapi kita pertegas sedikit glow-nya di sini --- */
+.item {
+    box-shadow: 0 0 0 1px rgba(34,197,94,0.05), 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* --- Tombol utama: kesan tombol command line --- */
+#openLetterBtn, .blow-btn, #readBirthdayMessageBtn {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+}
+#openLetterBtn::before {
+    content: "$ ";
+    opacity: 0.7;
+}
+
+/* --- Scrollbar tipis ala terminal (opsional, browser berbasis Chromium) --- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(34,197,94,0.4); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* --- Splash screen: kasih kesan boot-up terminal --- */
+#splash h1 {
+    font-family: 'JetBrains Mono', monospace;
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+#splash p::before {
+    content: "> ";
+    color: #22c55e;
+}
+
+/* --- GALLERY: kesan "file browser" ala terminal --- */
+.gallery-item {
+    border: 1px solid rgba(34, 197, 94, 0.35) !important;
+}
+.gallery-badge {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 9px !important;
+    letter-spacing: 0.5px;
+    color: #22c55e !important;
+    background: rgba(0, 0, 0, 0.65) !important;
+    border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+/* --- STORY: tag versi ala git commit log --- */
+.commit-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    border-radius: 4px;
+    padding: 2px 7px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+.commit-tag-active {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.5);
+    animation: commit-pulse 1.4s ease-in-out infinite;
+}
+@keyframes commit-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}

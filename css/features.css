@@ -1,0 +1,163 @@
+/* ============================================
+   FEATURES.CSS - Style untuk fitur baru
+   (Memory Match, Generator Surat Cinta, Guestbook)
+   Di-load setelah style.css supaya bisa override kalau perlu.
+   ============================================ */
+
+/* --- MEMORY MATCH GAME --- */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+.memory-card {
+    aspect-ratio: 1 / 1;
+    perspective: 600px;
+    cursor: pointer;
+}
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+    transform: rotateY(180deg);
+}
+.memory-card-front, .memory-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.memory-card-front {
+    background: rgba(79,166,255,0.25);
+    border: 1px solid #22c55e;
+    font-size: 22px;
+}
+.memory-card-back {
+    transform: rotateY(180deg);
+    border: 2px solid #fbbf24;
+}
+.memory-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.memory-card.matched .memory-card-back {
+    border-color: #6ee7a0;
+    opacity: 0.85;
+}
+
+/* --- LETTER GENERATOR --- */
+.letter-mood-select {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.letter-mood-btn {
+    width: 100%;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+}
+.generated-letter-card {
+    margin-top: 12px;
+}
+.downloadable-letter-inner {
+    background: linear-gradient(135deg, #0d1512, #173626);
+    border: 2px solid #fbbf24;
+    border-radius: 6px;
+    padding: 20px 16px;
+    text-align: left;
+}
+.downloadable-letter-inner p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    white-space: pre-line;
+    opacity: 0.95;
+}
+.generated-letter-signature {
+    display: block;
+    margin-top: 14px;
+    text-align: right;
+    color: #fbbf24;
+    font-size: 12px;
+    font-weight: 600;
+}
+.letter-gen-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+.letter-gen-actions .quiz-btn { width: 100%; text-align: center; }
+
+/* --- GUESTBOOK --- */
+.guestbook-entry-btn {
+    margin-top: 18px;
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.guestbook-input, .guestbook-textarea {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #fff;
+    font-size: 13.5px;
+    outline: none;
+    font-family: inherit;
+}
+.guestbook-textarea { resize: vertical; min-height: 70px; }
+.guestbook-status {
+    font-size: 11.5px;
+    margin-top: 4px;
+    min-height: 14px;
+    text-align: center;
+}
+.guestbook-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.guestbook-empty {
+    font-size: 13px;
+    opacity: 0.7;
+    text-align: center;
+    padding: 20px 0;
+}
+.guestbook-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+.guestbook-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+.guestbook-card-name { font-size: 13px; font-weight: 700; color: #fbbf24; }
+.guestbook-card-date { font-size: 10px; opacity: 0.6; }
+.guestbook-card-message { font-size: 13px; line-height: 1.5; opacity: 0.9; }
